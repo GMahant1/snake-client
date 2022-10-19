@@ -13,13 +13,15 @@ const connect = function () {
     console.log("Message from server: ", data);
   })
 
+  conn.on("connect", () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: GM")
+  })
+
   return conn;
 };
 
 console.log("Connecting ...");
 connect();
 
-module.exports = {
-  net,
-  connect,
-};
+module.exports = connect;
