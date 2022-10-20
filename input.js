@@ -36,6 +36,16 @@ const handleUserInput = function (data) {
   if (data === "d") {
     connection.write("Move: right")
   }
+  //special characters for presaved messages to display in game
+  if (data === "m") {
+    connection.write("Say: Hello Snakes!")
+  }
+  if (data === "t") {
+    connection.write("Say: Im bigger")
+  }
+  if (data === "g") {
+    connection.write("Say: Good Game!")
+  }
 };
 
 module.exports = {setUpInput};
