@@ -1,9 +1,9 @@
 //importing IP and PORT from constants file
-const {IP, PORT} = require("./constants");
+const { IP, PORT } = require("./constants");
 
 const net = require("net");
 
-const connect = function () {
+const connect = function() {
 
   const conn = net.createConnection({
     host: IP,
@@ -15,13 +15,13 @@ const connect = function () {
   //when receiving data performs action
   conn.on("data", (data) => {
     console.log("Message from server: ", data);
-  })
+  });
 
   //when connected performs actions
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
     conn.write("Name: GM");
-  })
+  });
 
   // conn.on("connect", () => {
   //   conn.write("Move: down");
@@ -31,7 +31,4 @@ const connect = function () {
   return conn;
 };
 
-//console.log("Connecting ...");
-//connect();
-
-module.exports = {connect};
+module.exports = { connect };

@@ -1,26 +1,25 @@
 //creating a variable to hold keyboard data
 let connection;
 
-
 //setting up standard input to listen to userinput via keyboard
 //added connection variable
 
 const { connect } = require("http2");
 
-const setUpInput = function (conn) {
-  
+const setUpInput = function(conn) {
+
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
   stdin.resume();
   stdin.on("data", handleUserInput);
   connection = conn;
-  
+
   return stdin;
 };
 
 //creating a function to register data
-const handleUserInput = function (data) {
+const handleUserInput = function(data) {
   if (data === "\u0003") {
     process.exit();
   }
@@ -34,18 +33,18 @@ const handleUserInput = function (data) {
     connection.write("Move: down");
   }
   if (data === "d") {
-    connection.write("Move: right")
+    connection.write("Move: right");
   }
   //special characters for presaved messages to display in game
   if (data === "m") {
-    connection.write("Say: Hello Snakes!")
+    connection.write("Say: Hello Snakes!");
   }
   if (data === "t") {
-    connection.write("Say: Im bigger")
+    connection.write("Say: Im bigger");
   }
   if (data === "g") {
-    connection.write("Say: Good Game!")
+    connection.write("Say: Good Game!");
   }
 };
 
-module.exports = {setUpInput};
+module.exports = { setUpInput };
