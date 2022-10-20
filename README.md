@@ -8,8 +8,8 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["Succesfull connection and startup message with intials"](https://imgur.com/a/vwJGyZV)
-!["Bigger snake with special message to interact with others"](https://imgur.com/a/vbp9Rwl)
+!["Succesfull connection and startup message with intials"](https://imgur.com/a/vwJGyZV.md)
+!["Bigger snake with special message to interact with others"](https://imgur.com/a/vbp9Rwl.md)
 
 
 ## Getting Started
