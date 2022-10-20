@@ -1,21 +1,9 @@
-const connect = require("./client");
+const { connect } = require("./client");
+const { setUpInput } = require("./input.js");
 
-//setting up standard input to listen to userinput via keyboard
+console.log("Connecting ...");
+console.log(connect);
+connect();
 
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on("data", handleUserInput);
-  return stdin;
-};
+setUpInput();
 
-//creating a function to register data
-const handleUserInput = function (data) {
-  if (data === "\u0003") {
-    process.exit();
-  }
-};
-
-setupInput();
